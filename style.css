@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    padding-top: 60px; /* Offset for fixed navbar */
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(17, 17, 17, 0.54);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: rgb(199, 199, 199);
+    text-decoration: none;
+    font-size: 1rem; /* Adjusted to rem for responsiveness */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff; /* Color on hover */
+}
+
+.navbar .logo {
+    cursor: pointer;
+}
+
+.logo img {
+    height: 35px;
+}
+
+/* Home Section Styles */
+#home {
+    height: 100vh;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#home h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+#home p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Showcase Section */
+#showcase {
+    background: #f8f8f8;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#showcase h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#showcase p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    background: #adadad;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.card img {
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card p {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover img {
+    opacity: 0;
+}
+
+.card:hover span {
+    transform: translateY(-20px);
+}
+
+.card:hover p {
+    opacity: 1;
+}
+
+/* Vision Section */
+#vision {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    background: #fff;
+}
+
+.vision-left, .vision-right {
+    flex: 1;
+    padding: 20px;
+    min-width: 300px;
+}
+
+.vision-right {
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    display: table;
+}
+
+.vision-right p {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.vision-left h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.vision-left p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Responsive Grid */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .card-container {
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 250px;
+        height: 250px;
+    }
+
+    #home h1 {
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        font-size: 1.3rem;
+    }
+
+    .vision-left h1 {
+        font-size: 2rem;
+    }
+
+    .vision-left p {
+        font-size: 1rem;
+    }
+    .card img{
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .card {
+        width: 200px;
+        height: 200px;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1.2rem;
+    }
+
+    .vision-left h1 {
+        font-size: 1.8rem;
+    }
+
+    .vision-left p {
+        font-size: 1rem;
+    }
+
+    .vision-right p {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 10px;
+        text-align: center;
+    }
+    .card img{
+        height: 70px;
+    }
+    #contact {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .contact-card {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .contact-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-card p {
+        font-size: 0.95rem;
+    }
+
+    .contact-card button {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 180px;
+        height: 180px;
+    }
+
+    #showcase h1 {
+        font-size: 2rem;
+    }
+
+    #showcase p {
+        font-size: 1rem;
+    }
+
+    #home h1 {
+        font-size: 1.8rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    .vision-left h1 {
+        font-size: 1.6rem;
+    }
+
+    .vision-left p {
+        font-size: 0.9rem;
+    }
+
+    .vision-right p {
+        font-size: 0.9rem;
+    }
+    .contact-card {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .contact-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-card p {
+        font-size: 0.9rem;
+    }
+
+    .contact-card button {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
+
+}
+
+footer {
+    background-color: #c5c5c5;
+    padding: 20px;
+    bottom: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.column h1 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.column a {
+    color: #4e4e4e;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.column a:hover {
+    color: #afafaf;
+}
+
+.footimger {
+    text-align: center;
+}
+
+.footimger img {
+    width: 150px;
+    height: auto;
+}
+
+.footlabby {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    background-color: grey;
+    padding: 10px;
+}
+
+.footlabby a {
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+}
+
+.footlabby a:hover {
+    color: #000000;
+}
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background: #f8f8f8;
+    padding: 20px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+}
+
+.contact-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+.contact-card button {
+    background: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.contact-card button:hover {
+    background: #333;
+}
+
